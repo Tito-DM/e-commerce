@@ -4,11 +4,10 @@ pipeline{
         stage('build') {
             steps {
                git 'https://github.com/Tito-DM/e-commerce'
-            }
-
-            steps{
                 sh 'npm install'
             }
+
+       
         }
 
        
