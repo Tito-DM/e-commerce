@@ -4,9 +4,8 @@ pipeline{
         stage('build') {
          
             steps {
-               
+               sh "chmod +x -R ${env.WORKSPACE}"
                git 'https://github.com/Tito-DM/e-commerce'
-               sh 'sudo rm -r node /var/lib/jenkins/workspace/node'
                sh 'npm install'
             }
 
