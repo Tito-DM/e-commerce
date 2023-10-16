@@ -1,5 +1,5 @@
 pipeline{
-     agent { docker { image 'node:current-alpine3.17' } }
+     agent { docker { image 'node:latest' } }
     stages {
         stage('build') {
          
