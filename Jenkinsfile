@@ -1,11 +1,10 @@
 pipeline{
      agent { docker { image 'node:latest' } }
     stages {
+        stage('SCM') {
+            checkout scm
+        }
         stage('build') {
-             stage('SCM') {
-                checkout scm
-            }
-         
             steps {
                git 'https://github.com/Tito-DM/e-commerce'
                
