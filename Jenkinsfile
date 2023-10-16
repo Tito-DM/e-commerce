@@ -3,9 +3,15 @@ pipeline{
     stages {
         stage('build') {
             steps {
-                sh 'node --version'
+               git 'https://github.com/Tito-DM/e-commerce'
+            }
+
+            steps{
+                sh 'npm install'
             }
         }
+
+       
     }
    
 }
