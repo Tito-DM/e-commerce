@@ -4,7 +4,7 @@ pipeline{
         stage('build') {
          
             steps {
-                sh 'sudo chown -R 129:137 "/.npm"'
+                sh 'chown -R 129:137 "/.npm"'
                git 'https://github.com/Tito-DM/e-commerce'
                sh 'npm install'
             }
