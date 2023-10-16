@@ -1,5 +1,5 @@
 pipeline{
-     agent { dockerContainer { image 'node-alpine' } }
+     agent { dockerContainer { image 'node' } }
     stages {
         stage('build') {
             steps {
