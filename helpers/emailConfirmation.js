@@ -29,7 +29,7 @@ exports.sendMail = async (to, subject, text, id, res, link) => {
         `msg: Issue send email \n error: ${error.message} at  ${__filename} `
       );
       res.status(500).json({
-        msg: err,
+        msg: error,
       });
     }
 

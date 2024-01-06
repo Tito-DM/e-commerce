@@ -3,6 +3,9 @@ const userAuthenticity = require("../helpers/userAuthenticity");
 const Product = require("../models/products");
 const User = require("../models/user");
 
+
+
+
 exports.getAllProduct = async (req, res) => {
   try {
     // verify user authenticity
@@ -61,8 +64,8 @@ exports.AddProduct = async (req, res) => {
     return res.status(409).json({
       msg: "product already exists",
     });
-
-  if (currentUser.isAdmin) {
+console.log(currentUser)
+  if (currentUser.UserRole.role === "admin") {
     await Product.create(req.body)
       .then((data) => {
         logger.info(

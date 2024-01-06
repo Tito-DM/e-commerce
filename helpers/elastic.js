@@ -1,17 +1,17 @@
 const { Client } = require("@elastic/elasticsearch");
+const logger = require("./logger");
 
 exports.elasticClient =  () => {
   try {
     const client =  new Client({
       node: "https://localhost:9200/",
-      auth:{
-        username: process.env.elasticUser,
-        password: process.env.elasticPassword
-      }
     });
+    logger.info("Elastic connection sucessfull");
     return client;
+
   } catch (error) {
-    console.log("note connected")
+
+    logger.info(`error connection to elastic search, ${error}`);
   }
 
 };

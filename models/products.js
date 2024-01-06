@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 const { elasticClient } = require("../helpers/elastic");
-const mongoosastic = require("mongoosastic");
+const mongoosastic = require('mongoosastic')
 //elastic config
 //elastic config
 const client = elasticClient();
+
+
+
 
 const productSchema = new mongoose.Schema(
   {
@@ -92,7 +95,6 @@ const productSchema = new mongoose.Schema(
 );
 
 //index mongodb to elastic
-productSchema.plugin(mongoosastic, {
-  esClient: client,
-});
+productSchema.plugin(mongoosastic);
+
 module.exports = mongoose.model("Product", productSchema);
